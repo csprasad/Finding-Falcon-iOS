@@ -8,7 +8,7 @@
 import UIKit
 
 struct Destination {
-    
+    let groupId: Int
     let id: Int
     let image: UIImage
     let vehicle: String

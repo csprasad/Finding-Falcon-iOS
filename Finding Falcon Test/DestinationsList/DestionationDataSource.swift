@@ -12,6 +12,7 @@ class DestinationDataSource: NSObject {
     
     struct Section {
         struct Item {
+            let groupId: Int
             let identifier: Int
             let image: UIImage
             let vehicle: String
@@ -24,38 +25,36 @@ class DestinationDataSource: NSObject {
     let sections: [Section]
     
     enum SectionStyle {
-        
         case single
-        
-        case byGroup(maximumItemsPerAlbum: Int?, maximumNumberOfAlbums: Int?)
+        case byGroup(maximumItemsPerGroup: Int?, maximumNumberOfGroup: Int?)
     }
     
     init(destination: [Destination], sectionStyle: SectionStyle) {
         switch sectionStyle {
         case .single:
             self.sections = [Section(items: destination.map{
-                Section.Item(identifier: $0.id, image: $0.image, vehicle: $0.vehicle, planet: $0.planet)
+                Section.Item(groupId: $0.groupId, identifier: $0.id, image: $0.image, vehicle: $0.vehicle, planet: $0.planet)
             })]
             
-        case .byGroup(let maximumItemsPerAlbum, let maximumNumberOfAlbums):
+        case .byGroup(let maximumItemsPerGroup, let maximumNumberOfGroup):
             var sectionNumberToItems: [Int: [Section.Item]] = [:]
             
             for item in destination {
-                let item = Section.Item(identifier: item.id, image: item.image, vehicle: item.vehicle, planet: item.planet)
+                let item = Section.Item(groupId: item.groupId, identifier: item.id, image: item.image, vehicle: item.vehicle, planet: item.planet)
                 
-                if let existingItems = sectionNumberToItems[item.identifier] {
-                    sectionNumberToItems[item.identifier] = existingItems + [item]
+                if let existingItems = sectionNumberToItems[item.groupId] {
+                    sectionNumberToItems[item.groupId] = existingItems + [item]
                 } else {
-                    sectionNumberToItems[item.identifier] = [item]
+                    sectionNumberToItems[item.groupId] = [item]
                 }
             }
             
             let sortedKeys = sectionNumberToItems.keys.sorted()
             
             var sections: [Section] = []
-            for key in Array(sortedKeys.prefix(maximumNumberOfAlbums ?? sortedKeys.count)) {
+            for key in Array(sortedKeys.prefix(maximumNumberOfGroup ?? sortedKeys.count)) {
                 guard let items = sectionNumberToItems[key] else { continue }
-                sections.append(Section(items: Array(items.prefix(maximumItemsPerAlbum ?? items.count))))
+                sections.append(Section(items: Array(items.prefix(maximumItemsPerGroup ?? items.count))))
             }
             
             self.sections = sections
@@ -96,7 +95,7 @@ extension DestinationDataSource: UICollectionViewDataSource {
                 return HeaderSupplementaryView()
             }
             
-            headerView.viewModel = HeaderSupplementaryView.ViewModel(title: "Section \(indexPath.section + 1)")
+            headerView.viewModel = HeaderSupplementaryView.ViewModel(title: "Destination \(indexPath.section + 1)")
             return headerView
             
         case "new-banner":
