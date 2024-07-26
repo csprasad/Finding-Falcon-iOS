@@ -95,7 +95,7 @@ extension DestinationDataSource: UICollectionViewDataSource {
                 return HeaderSupplementaryView()
             }
             
-            headerView.viewModel = HeaderSupplementaryView.ViewModel(title: "Destination \(indexPath.section + 1)")
+            headerView.viewModel = HeaderSupplementaryView.ViewModel(title: "Select Destination") //\(indexPath.section + 1)
             return headerView
             
         case "new-banner":

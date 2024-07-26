@@ -11,7 +11,7 @@ import UIKit
 class DestinationCell: UICollectionViewCell {
     @IBOutlet weak var bottomBGView: UIView! {
         didSet {
-            bottomBGView.layer.cornerRadius = 15
+            bottomBGView.layer.cornerRadius = 5
         }
     }
     @IBOutlet weak var destinationImage: UIImageView!

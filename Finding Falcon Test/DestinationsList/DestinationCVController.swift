@@ -42,12 +42,12 @@ class DestinationCVController: UICollectionViewController {
     let ds = [
         Destination(groupId:1, id: 1, image: UIImage(named: "Donlon") ?? UIImage(), vehicle: "Space pod", planet: "Donlon"),
         Destination(groupId:1, id: 2, image: UIImage(named: "Enchai") ?? UIImage(), vehicle: "Space rocket", planet: "Enchai"),
-        Destination(groupId:2, id: 3, image: UIImage(named: "Jebing") ?? UIImage(), vehicle: "Space shuttle", planet: "Jebing"),
-        Destination(groupId: 2, id: 4, image: UIImage(named: "Sapir") ?? UIImage(), vehicle: "Space ship", planet: "Sapir"),
-        Destination(groupId: 3, id: 5, image: UIImage(named: "Lerbin") ?? UIImage(), vehicle: "Space", planet: "Lerbin"),
-        Destination(groupId: 3, id: 6, image: UIImage(named: "Donlon") ?? UIImage(), vehicle: "Space", planet: "Pingasor"),
-        Destination(groupId: 4, id: 7, image: UIImage(named: "Donlon") ?? UIImage(), vehicle: "Space pod", planet: "Donlon"),
-        Destination(groupId: 4, id: 8, image: UIImage(named: "Enchai") ?? UIImage(), vehicle: "Space rocket", planet: "Enchai")]
+        Destination(groupId:1, id: 3, image: UIImage(named: "Jebing") ?? UIImage(), vehicle: "Space shuttle", planet: "Jebing"),
+        Destination(groupId: 1, id: 4, image: UIImage(named: "Sapir") ?? UIImage(), vehicle: "Space ship", planet: "Sapir"),
+        Destination(groupId: 1, id: 5, image: UIImage(named: "Lerbin") ?? UIImage(), vehicle: "Space", planet: "Lerbin"),
+        Destination(groupId: 1, id: 6, image: UIImage(named: "Donlon") ?? UIImage(), vehicle: "Space", planet: "Pingasor"),
+        Destination(groupId: 1, id: 7, image: UIImage(named: "Donlon") ?? UIImage(), vehicle: "Space pod", planet: "Donlon"),
+        Destination(groupId: 1, id: 8, image: UIImage(named: "Enchai") ?? UIImage(), vehicle: "Space rocket", planet: "Enchai")]
     
     
     
@@ -58,8 +58,8 @@ class DestinationCVController: UICollectionViewController {
         self.layout = compositionalLayout
         collectionView.collectionViewLayout = layout ?? UICollectionViewLayout()
         print(layout?.description)
-        let DS = DestinationDataSource(destination: ds, sectionStyle: .byGroup(maximumItemsPerGroup: 2, maximumNumberOfGroup: nil))
-//        self.dataSource = DS
+        let DS = DestinationDataSource(destination: ds, sectionStyle: .byGroup(maximumItemsPerGroup: 5, maximumNumberOfGroup: nil))
+        self.dataSource = DS
         collectionView.dataSource = dataSource
         collectionView.delegate = self
         collectionView.reloadData()
@@ -73,14 +73,17 @@ class DestinationCVController: UICollectionViewController {
         // Create a blur effect
         let blurEffect = UIBlurEffect(style: .systemUltraThinMaterial)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = collectionView.bounds
+        let collectionViewHeight = collectionView.frame.height
+        let blurEffectHeight = collectionViewHeight / 2 // half of the collectionView's height
+        blurEffectView.frame = CGRect(x: 0, y: collectionViewHeight / 2, width: collectionView.frame.width, height: blurEffectHeight)
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
         
         // Add gradient layer for blending
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = blurEffectView.bounds
-        gradientLayer.colors = [UIColor.white.cgColor, UIColor.white.cgColor]
-        gradientLayer.locations = [0.5, 1.0] // Start blur halfway
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.white.cgColor]
+        gradientLayer.locations = [0.0, 1.0] // Start blur halfway
         
         // Mask the blur effect view
         blurEffectView.layer.mask = gradientLayer
