@@ -59,11 +59,33 @@ class DestinationCVController: UICollectionViewController {
         collectionView.collectionViewLayout = layout ?? UICollectionViewLayout()
         print(layout?.description)
         let DS = DestinationDataSource(destination: ds, sectionStyle: .byGroup(maximumItemsPerGroup: 2, maximumNumberOfGroup: nil))
-        self.dataSource = DS
+//        self.dataSource = DS
         collectionView.dataSource = dataSource
         collectionView.delegate = self
         collectionView.reloadData()
         print(dataSource?.sections[0].items[0].vehicle)
+        
+        let backgroundImage = UIImage(named: "BGSpace")
+        let imageView = UIImageView(image: backgroundImage)
+        imageView.contentMode = .scaleToFill
+        collectionView.backgroundView = imageView
+        
+        // Create a blur effect
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = collectionView.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        // Add gradient layer for blending
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = blurEffectView.bounds
+        gradientLayer.colors = [UIColor.white.cgColor, UIColor.white.cgColor]
+        gradientLayer.locations = [0.5, 1.0] // Start blur halfway
+        
+        // Mask the blur effect view
+        blurEffectView.layer.mask = gradientLayer
+        collectionView.backgroundView?.addSubview(blurEffectView)
+        
     }
     
     // MARK: - PhotosCollectionViewController

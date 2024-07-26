@@ -108,4 +108,16 @@ extension DestinationDataSource: UICollectionViewDataSource {
             return UICollectionReusableView()
         }
     }
+    
+    
+}
+
+
+extension DestinationCVController {
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Handle selection
+        print("Selected item at \(indexPath)")
+    }
+
 }

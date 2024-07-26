@@ -19,11 +19,21 @@ final class HeaderSupplementaryView: UICollectionReusableView {
 	}
 	
 	@IBOutlet private weak var label: UILabel!
-	
+    @IBOutlet weak var bgView: UIView! {
+        didSet {
+            bgView.layer.cornerRadius = 10
+        }
+    }
+    
 	/// The cell’s view model. Setting the view model updates the display of the view’s contents.
 	var viewModel: ViewModel? {
 		didSet {
 			label.text = viewModel?.title
 		}
 	}
+    
+    override func prepareForReuse() {
+//        bgView.layer.cornerRadius = 15
+//        bgView.clipsToBounds = true
+    }
 }

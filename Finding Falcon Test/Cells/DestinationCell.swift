@@ -9,7 +9,11 @@ import Foundation
 import UIKit
 
 class DestinationCell: UICollectionViewCell {
-    @IBOutlet weak var bottomBGView: UIView!
+    @IBOutlet weak var bottomBGView: UIView! {
+        didSet {
+            bottomBGView.layer.cornerRadius = 15
+        }
+    }
     @IBOutlet weak var destinationImage: UIImageView!
     
     @IBOutlet weak var planet: UILabel!
@@ -30,7 +34,8 @@ class DestinationCell: UICollectionViewCell {
         }
     }
     
-    
-    
+    override func prepareForReuse() {
+        
+    }
     
 }
