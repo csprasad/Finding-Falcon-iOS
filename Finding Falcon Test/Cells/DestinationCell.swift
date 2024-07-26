@@ -14,7 +14,11 @@ class DestinationCell: UICollectionViewCell {
             bottomBGView.layer.cornerRadius = 5
         }
     }
-    @IBOutlet weak var destinationImage: UIImageView!
+    @IBOutlet weak var destinationImage: UIImageView! {
+        didSet {
+            destinationImage.layer.cornerRadius = 5
+        }
+    }
     
     @IBOutlet weak var planet: UILabel!
     @IBOutlet weak var vehicle: UILabel!
@@ -32,10 +36,6 @@ class DestinationCell: UICollectionViewCell {
             vehicle.text = "Vehicle \(viewModel?.vehicle ?? "godi")"
             planet.text = "Planet \(viewModel?.planet ?? "gadi")"
         }
-    }
-    
-    override func prepareForReuse() {
-        
     }
     
 }

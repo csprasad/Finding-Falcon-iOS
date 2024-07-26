@@ -21,7 +21,7 @@ final class HeaderSupplementaryView: UICollectionReusableView {
 	@IBOutlet private weak var label: UILabel!
     @IBOutlet weak var bgView: UIView! {
         didSet {
-            bgView.layer.cornerRadius = 10
+            bgView.layer.cornerRadius = 5
         }
     }
     
