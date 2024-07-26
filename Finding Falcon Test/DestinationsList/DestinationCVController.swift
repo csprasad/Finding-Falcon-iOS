@@ -40,7 +40,7 @@ class DestinationCVController: UICollectionViewController {
     }()
     
     let ds = [
-        Destination(groupId:1, id: 1, image: UIImage(named: "Donlon") ?? UIImage(), vehicle: "Space pod", planet: "Donlon"),
+        Destination(groupId:1, id: 1, image: UIImage(named: "") ?? UIImage(), vehicle: "Space pod", planet: "Donlon"),
         Destination(groupId:1, id: 2, image: UIImage(named: "Enchai") ?? UIImage(), vehicle: "Space rocket", planet: "Enchai"),
         Destination(groupId:1, id: 3, image: UIImage(named: "Jebing") ?? UIImage(), vehicle: "Space shuttle", planet: "Jebing"),
         Destination(groupId: 1, id: 4, image: UIImage(named: "Sapir") ?? UIImage(), vehicle: "Space ship", planet: "Sapir"),
@@ -57,6 +57,8 @@ class DestinationCVController: UICollectionViewController {
         registerCells()
         self.layout = compositionalLayout
         collectionView.collectionViewLayout = layout ?? UICollectionViewLayout()
+        collectionView.contentInset = UIEdgeInsets(top: 80, left: 0, bottom: 0, right: 0)
+        
         print(layout?.description)
         let DS = DestinationDataSource(destination: ds, sectionStyle: .byGroup(maximumItemsPerGroup: 5, maximumNumberOfGroup: nil))
         self.dataSource = DS
