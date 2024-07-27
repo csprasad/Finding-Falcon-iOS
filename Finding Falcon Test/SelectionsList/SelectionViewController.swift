@@ -17,42 +17,34 @@ class SelectionViewController: UIViewController, UICollectionViewDelegate {
         return layout
     }()
     
-    let dataSource = SelectionDataSource()
+    var planetDataSource: GenericDataSource<Planet>!
+    var vehicleDataSource: GenericDataSource<Vehicle>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.collectionView.collectionViewLayout = self.collectionViewFlowLayout
-        self.collectionView.dataSource = self.dataSource
         self.collectionView.delegate = self
-//        collectionView.register(SelectionCVCell.self, forCellWithReuseIdentifier: "SelectionCVCell")
         collectionView.register(UINib(nibName: "SelectionCVCell", bundle: nil), forCellWithReuseIdentifier: "SelectionCVCell")
 
+        planetDataSource = GenericDataSource(items: planets)
+        vehicleDataSource = GenericDataSource(items: vehicles)
 
-        
-        self.dataSource.data.addAndNotify(observer: self) { [weak self] in
-            self?.collectionView.reloadData()
-        }
-        
-        self.dataSource.data.value = [
-            Vehicle(name: "Space Pod", totalNo: 2, maxDistance: 200, speed: 2, image: UIImage(named: "Donlon") ?? UIImage()),
-            Vehicle(name: "Space Rocket", totalNo: 1, maxDistance: 300, speed: 4, image: UIImage(named: "Enchai") ?? UIImage())]
+        collectionView.dataSource = planetDataSource
     }
     
     @IBAction func SelectSegment(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 1:
-            self.collectionViewFlowLayout.display = .list
-            self.collectionHeader.text = "Select Planets".capitalized
-        case 2:
-            self.collectionViewFlowLayout.display = .list
-            self.collectionHeader.text = "Select Vehicle".capitalized
-        default:
-            self.collectionViewFlowLayout.display = .grid
+        if sender.selectedSegmentIndex == 0 {
+            self.collectionHeader.text = "Select Planet".uppercased()
+            collectionView.dataSource = planetDataSource
+        } else {
+            self.collectionHeader.text = "Select Vehicle".uppercased()
+            collectionView.dataSource = vehicleDataSource
         }
+        collectionView.reloadData()
     }
     
     @IBAction func doneButton(_ sender: UIButton) {
-        print("Selected data\(dataSource)")
+//        print("Selected data\(dataSource)")
     }
 }

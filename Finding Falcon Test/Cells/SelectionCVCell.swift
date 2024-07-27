@@ -25,17 +25,37 @@ class SelectionCVCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        bgImage.image = UIImage(named: "Donlon")
-        print("into cell")
+        // use
     }
     
-    func configure(with data: Vehicle) {
-        print("into cell config\(data)")
+    func configureForVehicle(with data: Vehicle) {
+        bgImage.image = UIImage(named: data.name)
         name.text = data.name
-        totalNo.text = "\(data.totalNo)"
+        totalNo.text = "\(data.totalAvailable)"
         maxDistance.text =  "\(data.maxDistance )"
-        speed.text = "\(data.speed)"
-        
+        speed.text = "\(data.maxSpeed)"
+        ViewSetup(isDisbaled: false)
+    }
+    
+    func configureForPlanet(with data: Planet) {
+        bgImage.image = UIImage(named: data.name)
+        name.text = data.name
+        totalNo.text = "\(data.distance)"
+        ViewSetup(isDisbaled: true)
+    }
+    
+    func ViewSetup(isDisbaled: Bool) {
+        if isDisbaled {
+            labelMaxDistance.isHidden = true
+            labelSpeed.isHidden = true
+            maxDistance.isHidden = true
+            speed.isHidden = true
+        } else {
+            labelMaxDistance.isHidden = false
+            labelSpeed.isHidden = false
+            maxDistance.isHidden = false
+            speed.isHidden = false
+        }
     }
 
 }
