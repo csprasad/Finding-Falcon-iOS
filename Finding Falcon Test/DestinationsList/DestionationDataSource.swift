@@ -118,6 +118,10 @@ extension DestinationCVController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Handle selection
         print("Selected item at \(indexPath)")
+        let vc = UIViewController(nibName: "Main", bundle: nil)
+        if let nextVC = storyboard?.instantiateViewController(withIdentifier: "SelectionViewController") as? SelectionViewController {
+            navigationController?.pushViewController(nextVC, animated: true)
+        }
     }
 
 }
