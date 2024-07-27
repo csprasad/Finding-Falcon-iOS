@@ -119,16 +119,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlanetsBG" translatesAutoresizingMaskIntoConstraints="NO" id="eur-Tt-BVW">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="170"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="I2j-oL-j8A"/>
+                                    <constraint firstAttribute="height" constant="170" id="I2j-oL-j8A"/>
                                 </constraints>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gwh-qI-NAa">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="170"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="p3g-yU-TbG">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="170"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT VEHICLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUV-1M-Dor">
+                                            <rect key="frame" x="16" y="142" width="201" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="201" id="Qgb-cd-LRJ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemGray5Color"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="PUV-1M-Dor" secondAttribute="bottom" constant="8" id="C50-nw-wj3"/>
+                                        <constraint firstItem="PUV-1M-Dor" firstAttribute="leading" secondItem="p3g-yU-TbG" secondAttribute="leading" constant="16" id="VZd-9s-lg5"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="systemUltraThinMaterial"/>
                             </visualEffectView>
@@ -170,7 +185,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gJj-2J-RVK">
-                                <rect key="frame" x="0.0" y="150" width="393" height="458"/>
+                                <rect key="frame" x="0.0" y="170" width="393" height="438"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4I9-v6-0O8">
                                     <size key="itemSize" width="128" height="128"/>
@@ -215,6 +230,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionHeader" destination="PUV-1M-Dor" id="LKu-BW-a9z"/>
                         <outlet property="collectionView" destination="gJj-2J-RVK" id="les-J3-NwL"/>
                     </connections>
                 </viewController>
@@ -275,6 +291,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
