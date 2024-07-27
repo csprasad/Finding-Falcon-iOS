@@ -8,9 +8,9 @@
 import UIKit
 
 class SelectionViewController: UIViewController, UICollectionViewDelegate {
-
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionHeader: UILabel!
     lazy var collectionViewFlowLayout : SelectionCustomCVFlowLayout = {
         let layout = SelectionCustomCVFlowLayout(display: .list)
@@ -31,6 +31,11 @@ class SelectionViewController: UIViewController, UICollectionViewDelegate {
         vehicleDataSource = GenericDataSource(items: vehicles)
 
         collectionView.dataSource = planetDataSource
+        let normalTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        let selectedTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            
+        segmentedControl.setTitleTextAttributes(normalTextAttributes, for: .normal)
+        segmentedControl.setTitleTextAttributes(selectedTextAttributes, for: .selected)
     }
     
     @IBAction func SelectSegment(_ sender: UISegmentedControl) {

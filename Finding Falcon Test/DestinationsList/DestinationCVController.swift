@@ -40,7 +40,7 @@ class DestinationCVController: UICollectionViewController {
     }()
     
     let ds = [
-        Destination(groupId:1, id: 1, image: UIImage(named: "") ?? UIImage(), vehicle: "Space pod", planet: "Donlon"),
+        Destination(groupId:1, id: 1, image: UIImage(named: "Donlon") ?? UIImage(), vehicle: "Space pod", planet: "Donlon"),
         Destination(groupId:1, id: 2, image: UIImage(named: "Enchai") ?? UIImage(), vehicle: "Space rocket", planet: "Enchai"),
         Destination(groupId:1, id: 3, image: UIImage(named: "Jebing") ?? UIImage(), vehicle: "Space shuttle", planet: "Jebing"),
         Destination(groupId: 1, id: 4, image: UIImage(named: "Sapir") ?? UIImage(), vehicle: "Space ship", planet: "Sapir"),

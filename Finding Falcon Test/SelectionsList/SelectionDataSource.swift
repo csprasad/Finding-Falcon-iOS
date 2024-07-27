@@ -17,10 +17,10 @@ var planets: [Planet] = [
     Planet(name: "Pingasor", distance: 600,imageName: "Pingasor")]
 
 var vehicles: [Vehicle] = [
-    Vehicle(name: "Space Pod", totalAvailable: 2, maxDistance: 200, maxSpeed: 2, imageName: "Donlon"),
-    Vehicle(name: "Space Rocket", totalAvailable: 1, maxDistance: 300, maxSpeed: 4, imageName: "Donlon"),
-    Vehicle(name: "Space shuttle", totalAvailable: 1, maxDistance: 400, maxSpeed: 5, imageName: "Donlon"),
-    Vehicle(name: "Space ship", totalAvailable: 2, maxDistance: 600, maxSpeed: 10, imageName: "Donlon")]
+    Vehicle(name: "Space Pod", totalAvailable: 2, maxDistance: 200, maxSpeed: 2, imageName: "SpacePod"),
+    Vehicle(name: "Space Rocket", totalAvailable: 1, maxDistance: 300, maxSpeed: 4, imageName: "SpaceRocket"),
+    Vehicle(name: "Space shuttle", totalAvailable: 1, maxDistance: 400, maxSpeed: 5, imageName: "SpaceShuttle"),
+    Vehicle(name: "Space ship", totalAvailable: 2, maxDistance: 600, maxSpeed: 10, imageName: "Spaceship")]
 
 var isPlanetSelected = true
 
@@ -82,6 +82,30 @@ class GenericDataSource<T: Displayable>: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectionCVCell", for: indexPath) as! SelectionCVCell
+        configureProductCell(cell, for: indexPath)
+        return cell
+    }
+    
+    private let cellsShadowColor = UIColor(hex: "2a002a").cgColor
+    private let gradientFirstColor = UIColor(hex: "EEEEEE")
+    private let gradientSecondColor = UIColor(hex: "a81382").cgColor
+    
+    private func configureProductCell(_ cell: SelectionCVCell, for indexPath: IndexPath) {
+//        cell.clipsToBounds = false
+//        cell.backgroundColor = gradientFirstColor
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.frame = cell.bounds
+//        gradientLayer.colors = [gradientFirstColor, gradientSecondColor]
+        cell.layer.cornerRadius = 8
+        cell.bgView.layer.cornerRadius = 8
+//        gradientLayer.masksToBounds = true
+//        cell.layer.insertSublayer(gradientLayer, at: 0)
+        
+        cell.layer.shadowColor = cellsShadowColor
+        cell.layer.shadowOpacity = 0.2
+        cell.layer.shadowRadius = 16
+        cell.layer.shadowOffset = CGSize(width: 0.0, height: 10)
+        
         let item = items[indexPath.item]
         
         if let planet = item as? Planet {
@@ -89,7 +113,5 @@ class GenericDataSource<T: Displayable>: NSObject, UICollectionViewDataSource {
         } else if let vehicle = item as? Vehicle {
             cell.configureForVehicle(with: vehicle)
         }
-        
-        return cell
     }
 }

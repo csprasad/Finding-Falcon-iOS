@@ -118,64 +118,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlanetsBG" translatesAutoresizingMaskIntoConstraints="NO" id="eur-Tt-BVW">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="170"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="I2j-oL-j8A"/>
-                                </constraints>
-                            </imageView>
-                            <visualEffectView opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gwh-qI-NAa">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="170"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="p3g-yU-TbG">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="170"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT PLANET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUV-1M-Dor">
-                                            <rect key="frame" x="16" y="145" width="201" height="17"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="201" id="Qgb-cd-LRJ"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="17"/>
-                                            <color key="textColor" systemColor="systemGray5Color"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="PUV-1M-Dor" secondAttribute="bottom" constant="8" id="C50-nw-wj3"/>
-                                        <constraint firstItem="PUV-1M-Dor" firstAttribute="leading" secondItem="p3g-yU-TbG" secondAttribute="leading" constant="16" id="VZd-9s-lg5"/>
-                                    </constraints>
-                                </view>
-                                <blurEffect style="systemUltraThinMaterial"/>
-                            </visualEffectView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tq4-kp-5P4">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tq4-kp-5P4">
                                 <rect key="frame" x="126" y="84" width="141" height="32"/>
                                 <segments>
                                     <segment title="Planets"/>
                                     <segment title="Vehicles"/>
                                 </segments>
+                                <color key="selectedSegmentTintColor" red="0.32549019607843138" green="0.36078431372549019" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="SelectSegment:" destination="Ybs-Rh-4b0" eventType="valueChanged" id="nAj-oQ-8Ry"/>
                                 </connections>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ue4-xY-wJt">
-                                <rect key="frame" x="0.0" y="608" width="393" height="160"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="GVX-fZ-7T9"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncv-aK-aFW">
-                                <rect key="frame" x="0.0" y="768" width="393" height="50"/>
+                                <rect key="frame" x="16" y="758" width="361" height="60"/>
+                                <color key="backgroundColor" red="0.32549019610000002" green="0.36078431370000003" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="DT7-te-kfM"/>
+                                    <constraint firstAttribute="height" constant="60" id="7sO-jZ-615"/>
                                 </constraints>
-                                <color key="tintColor" red="0.0" green="0.1333333333" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Done">
                                             <attributes>
-                                                <font key="NSFont" size="22" name="Helvetica"/>
+                                                <font key="NSFont" size="22" name="Futura-Medium"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -185,8 +151,8 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gJj-2J-RVK">
-                                <rect key="frame" x="0.0" y="170" width="393" height="438"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="170" width="393" height="482"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4I9-v6-0O8">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -204,34 +170,34 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT PLANET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYo-xr-rkb">
+                                <rect key="frame" x="15.999999999999993" y="131" width="124.33333333333331" height="21"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.12549019607843137" green="0.11764705882352941" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zeb-b2-cdK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ue4-xY-wJt" firstAttribute="top" secondItem="gJj-2J-RVK" secondAttribute="bottom" id="1sX-zx-rxh"/>
-                            <constraint firstItem="zeb-b2-cdK" firstAttribute="trailing" secondItem="Ncv-aK-aFW" secondAttribute="trailing" id="2UX-Sd-r1P"/>
-                            <constraint firstItem="tq4-kp-5P4" firstAttribute="top" secondItem="zeb-b2-cdK" secondAttribute="top" constant="25" id="3po-i1-d3z"/>
-                            <constraint firstItem="gJj-2J-RVK" firstAttribute="leading" secondItem="zeb-b2-cdK" secondAttribute="leading" id="Ex0-Y3-bPm"/>
-                            <constraint firstItem="Gwh-qI-NAa" firstAttribute="height" secondItem="eur-Tt-BVW" secondAttribute="height" id="Jhn-wS-cXq"/>
-                            <constraint firstItem="tq4-kp-5P4" firstAttribute="centerX" secondItem="zeb-b2-cdK" secondAttribute="centerX" id="Nfm-BC-4ln"/>
-                            <constraint firstItem="ue4-xY-wJt" firstAttribute="bottom" secondItem="Ncv-aK-aFW" secondAttribute="top" id="Sii-0A-b7P"/>
-                            <constraint firstItem="zeb-b2-cdK" firstAttribute="bottom" secondItem="Ncv-aK-aFW" secondAttribute="bottom" id="Vqc-Rl-gsf"/>
-                            <constraint firstItem="zeb-b2-cdK" firstAttribute="trailing" secondItem="gJj-2J-RVK" secondAttribute="trailing" id="ay6-Gp-rcm"/>
-                            <constraint firstItem="Gwh-qI-NAa" firstAttribute="trailing" secondItem="zeb-b2-cdK" secondAttribute="trailing" id="iqN-Ev-KwF"/>
-                            <constraint firstItem="Gwh-qI-NAa" firstAttribute="leading" secondItem="zeb-b2-cdK" secondAttribute="leading" id="jru-kd-Vfg"/>
-                            <constraint firstItem="eur-Tt-BVW" firstAttribute="top" secondItem="JtL-bT-Ho3" secondAttribute="top" id="kyi-Dq-mEE"/>
-                            <constraint firstItem="Ncv-aK-aFW" firstAttribute="leading" secondItem="zeb-b2-cdK" secondAttribute="leading" id="q3x-0h-zwQ"/>
-                            <constraint firstItem="eur-Tt-BVW" firstAttribute="trailing" secondItem="zeb-b2-cdK" secondAttribute="trailing" id="qF3-tp-YP4"/>
-                            <constraint firstItem="gJj-2J-RVK" firstAttribute="top" secondItem="eur-Tt-BVW" secondAttribute="bottom" id="sF4-GB-feb"/>
-                            <constraint firstItem="ue4-xY-wJt" firstAttribute="leading" secondItem="zeb-b2-cdK" secondAttribute="leading" id="vbT-zg-pC4"/>
-                            <constraint firstItem="eur-Tt-BVW" firstAttribute="leading" secondItem="zeb-b2-cdK" secondAttribute="leading" id="xU8-9O-AL5"/>
-                            <constraint firstItem="Gwh-qI-NAa" firstAttribute="top" secondItem="JtL-bT-Ho3" secondAttribute="top" id="xpd-SI-7I9"/>
-                            <constraint firstItem="ue4-xY-wJt" firstAttribute="trailing" secondItem="zeb-b2-cdK" secondAttribute="trailing" id="zmG-Cd-yRW"/>
+                            <constraint firstItem="Ncv-aK-aFW" firstAttribute="bottom" secondItem="zeb-b2-cdK" secondAttribute="bottom" id="3YI-28-kU1"/>
+                            <constraint firstAttribute="trailing" secondItem="Ncv-aK-aFW" secondAttribute="trailing" constant="16" id="Eau-NS-nl0"/>
+                            <constraint firstItem="gJj-2J-RVK" firstAttribute="top" secondItem="GYo-xr-rkb" secondAttribute="bottom" constant="18" id="GNF-dP-Las"/>
+                            <constraint firstItem="GYo-xr-rkb" firstAttribute="top" secondItem="tq4-kp-5P4" secondAttribute="bottom" constant="16" id="I6b-D9-bcB"/>
+                            <constraint firstItem="Ncv-aK-aFW" firstAttribute="top" secondItem="gJj-2J-RVK" secondAttribute="bottom" constant="106" id="ILr-qr-A8u"/>
+                            <constraint firstItem="tq4-kp-5P4" firstAttribute="centerX" secondItem="JtL-bT-Ho3" secondAttribute="centerX" id="KeW-Di-sUZ"/>
+                            <constraint firstItem="tq4-kp-5P4" firstAttribute="top" secondItem="zeb-b2-cdK" secondAttribute="top" constant="25" id="LDe-5k-mbS"/>
+                            <constraint firstItem="gJj-2J-RVK" firstAttribute="trailing" secondItem="zeb-b2-cdK" secondAttribute="trailing" id="TAS-mc-FFr"/>
+                            <constraint firstItem="gJj-2J-RVK" firstAttribute="leading" secondItem="zeb-b2-cdK" secondAttribute="leading" id="WDx-JU-Dch"/>
+                            <constraint firstItem="GYo-xr-rkb" firstAttribute="leading" secondItem="zeb-b2-cdK" secondAttribute="leading" constant="16" id="WyN-YK-O0f"/>
+                            <constraint firstItem="gJj-2J-RVK" firstAttribute="top" secondItem="tq4-kp-5P4" secondAttribute="bottom" constant="55" id="bAN-6c-96V"/>
+                            <constraint firstItem="Ncv-aK-aFW" firstAttribute="leading" secondItem="zeb-b2-cdK" secondAttribute="leading" constant="16" id="l07-YZ-4fs"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionHeader" destination="PUV-1M-Dor" id="LKu-BW-a9z"/>
+                        <outlet property="collectionHeader" destination="GYo-xr-rkb" id="j2s-W8-t8q"/>
                         <outlet property="collectionView" destination="gJj-2J-RVK" id="les-J3-NwL"/>
+                        <outlet property="segmentedControl" destination="tq4-kp-5P4" id="U4Q-xc-5Ya"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FKw-rO-Vzb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -285,15 +251,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="PlanetsBG" width="530" height="720"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

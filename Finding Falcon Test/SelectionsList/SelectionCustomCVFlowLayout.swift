@@ -28,7 +28,7 @@ class SelectionCustomCVFlowLayout : UICollectionViewFlowLayout {
         self.init()
         
         self.display = display
-        self.minimumLineSpacing = 10
+        self.minimumLineSpacing = 16
         self.minimumInteritemSpacing = 10
         self.configLayout()
     }
@@ -52,7 +52,7 @@ class SelectionCustomCVFlowLayout : UICollectionViewFlowLayout {
         case .list:
             self.scrollDirection = .vertical
             if let collectionView = self.collectionView {
-                self.itemSize = CGSize(width: collectionView.frame.width , height: 130)
+                self.itemSize = CGSize(width: collectionView.frame.width - 32 , height: 160)
             }
         }
     }
