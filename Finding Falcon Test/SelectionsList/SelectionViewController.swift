@@ -50,6 +50,6 @@ class SelectionViewController: UIViewController, UICollectionViewDelegate {
     }
     
     @IBAction func doneButton(_ sender: UIButton) {
-//        print("Selected data\(dataSource)")
+        navigationController?.popViewController(animated: true)
     }
 }
