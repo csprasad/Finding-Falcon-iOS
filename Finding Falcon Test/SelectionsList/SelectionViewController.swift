@@ -8,7 +8,9 @@
 import UIKit
 
 class SelectionViewController: UIViewController, UICollectionViewDelegate {
+    @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var doneButton: UIButton!
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionHeader: UILabel!
@@ -22,6 +24,8 @@ class SelectionViewController: UIViewController, UICollectionViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        blurView.layer.cornerRadius = 16
+        doneButton.layer.cornerRadius = doneButton.frame.height / 2
         
         self.collectionView.collectionViewLayout = self.collectionViewFlowLayout
         self.collectionView.delegate = self
