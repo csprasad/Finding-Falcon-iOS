@@ -27,6 +27,7 @@ class SelectionViewController: UIViewController, UICollectionViewDelegate {
         blurView.layer.cornerRadius = 16
         doneButton.layer.cornerRadius = doneButton.frame.height / 2
         
+        
         self.collectionView.collectionViewLayout = self.collectionViewFlowLayout
         self.collectionView.delegate = self
         collectionView.register(UINib(nibName: "SelectionCVCell", bundle: nil), forCellWithReuseIdentifier: "SelectionCVCell")
