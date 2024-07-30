@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="-425" y="-175"/>
         </scene>
-        <!--DestinationCV Controller-->
+        <!--Finding Falcon-->
         <scene sceneID="68T-gI-hYA">
             <objects>
-                <collectionViewController modalTransitionStyle="crossDissolve" id="aql-hQ-tYC" customClass="DestinationCVController" customModule="Finding_Falcon_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="Finding Falcon" modalTransitionStyle="crossDissolve" id="aql-hQ-tYC" customClass="DestinationCVController" customModule="Finding_Falcon_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Qcq-Id-v4y">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
