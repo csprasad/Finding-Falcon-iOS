@@ -1,6 +1,9 @@
 # Finding Falcon Challenge
 
-**Finding Falcon** is a challenge project built using both **Swift** and **SwiftUI**. The project provides a user interface to track and find various items related to the Falcon theme.
+**Finding Falcon** is a challenge project built using both **Swift** and **SwiftUI**. The app revolves around helping King Shan locate Queen Al Falcone, who is hiding on one of six planets. After the war with the neighboring planet Falicornia, the Queen was exiled, and King Shan must find her before her exile period ends.
+
+The challenge is to assist King Shan in using his limited resources to search four out of six possible planets: **DonLon, Enchai, Jebing, Sapir, Lerbin,** and **Pingasor**. The app simulates the search and decision-making process involved in locating the Queen.
+
 
 ## Overview
 
