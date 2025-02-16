@@ -13,15 +13,15 @@ struct testView: View {
     var body: some View {
         ZStack {
             // Background Circles
-            FloatingCircleView(size: 300, delay: 3.5, xOffset: -80, yOffset: -150)
-            FloatingCircleView(size: 240, delay: 2.0, xOffset: 100, yOffset: 80)
+            FloatingCircleView(size: 200, delay: 3.5, xOffset: -80, yOffset: -150)
+            FloatingCircleView(size: 200, delay: 2.0, xOffset: 100, yOffset: 80)
             
             // Main Card
             VStack {
                 Spacer()
                 
                 HStack {
-                    Image(systemName: "person.fill")
+                    Image(systemName: "person")
                         .resizable()
                         .frame(width: 100, height: 100)
                         .clipShape(Circle())
@@ -29,15 +29,15 @@ struct testView: View {
                         .shadow(radius: 10)
                     
                     VStack(alignment: .leading) {
-                        Text("Maniisha Gorasiya")
+                        Text("Code Alligator")
                             .font(.title)
                             .bold()
                             .foregroundColor(.white)
-                        Text("youremailId@gmail.com")
+                        Text("Alligator@gmail.com")
                             .font(.subheadline)
                             .foregroundColor(.white.opacity(0.7))
                         
-                        Text("UI/UX Designer | Front-End Developer | Graphics Designer")
+                        Text("iOS Developer")
                             .font(.body)
                             .foregroundColor(.white.opacity(0.6))
                             .padding(.top, 5)
@@ -51,18 +51,7 @@ struct testView: View {
                 .padding([.leading, .trailing], 20)
                 
                 Spacer()
-                
-                // Links
-                HStack {
-                    Link(destination: URL(string: "https://www.lpktechnosoft.com")!) {
-                        Text("Website")
-                            .foregroundColor(.blue)
-                    }
-                }
-                .padding([.leading, .trailing], 20)
-                .padding(.bottom, 20)
             }
-            .background(LinearGradient(gradient: Gradient(colors: [Color.black, Color.gray]), startPoint: .top, endPoint: .bottom))
             .edgesIgnoringSafeArea(.all)
         }
     }
@@ -84,9 +73,9 @@ struct FloatingCircleView: View {
             .overlay(
                 Circle().stroke(LinearGradient(gradient: Gradient(colors: [Color.pink, Color.purple]), startPoint: .top, endPoint: .bottom), lineWidth: 5)
             )
-//            .background(
-//                LinearGradient(gradient: Gradient(colors: [Color.pink, Color.purple]), startPoint: .top, endPoint: .bottom)
-//            )
+            .background(
+                LinearGradient(gradient: Gradient(colors: [Color.pink, Color.purple]), startPoint: .top, endPoint: .bottom)
+            )
             .opacity(0.8)
             .offset(x: xOffset, y: yOffset)
             .scaleEffect(animationAmount)
