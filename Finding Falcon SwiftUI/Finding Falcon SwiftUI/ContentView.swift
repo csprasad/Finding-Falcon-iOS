@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var result: FindFalconeResponse?
 
     var body: some View {
+        
         NavigationView {
             VStack {
                 if viewModel.isLoading {

@@ -22,8 +22,6 @@ struct PlanetSelectionView: View {
                         }
                     }
 
-
-                    
                     // Vehicle Picker
                     Picker("Select Vehicle", selection: $viewModel.selectedVehicles[index]) {
                         Text("None").tag(nil as Vehicle?) // Add "None" option
@@ -31,7 +29,6 @@ struct PlanetSelectionView: View {
                             Text("\(vehicle.name) (\(vehicle.totalNo))").tag(vehicle as Vehicle?)
                         }
                     }
-//                    .pickerStyle(.automatic)
                 }
             }
     }

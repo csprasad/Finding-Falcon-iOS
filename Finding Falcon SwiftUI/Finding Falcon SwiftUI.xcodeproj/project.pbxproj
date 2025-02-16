@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C86BAD852D62439D00624590 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAD842D62439D00624590 /* testView.swift */; };
 		C89C54282D5F1A880055FC4A /* Finding_Falcon_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89C54272D5F1A880055FC4A /* Finding_Falcon_SwiftUIApp.swift */; };
 		C89C542A2D5F1A880055FC4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89C54292D5F1A880055FC4A /* ContentView.swift */; };
 		C89C542C2D5F1A8C0055FC4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C89C542B2D5F1A8C0055FC4A /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C86BAD842D62439D00624590 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		C89C54242D5F1A880055FC4A /* Finding Falcon SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Finding Falcon SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C89C54272D5F1A880055FC4A /* Finding_Falcon_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finding_Falcon_SwiftUIApp.swift; sourceTree = "<group>"; };
 		C89C54292D5F1A880055FC4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				C89C54392D5F1BCB0055FC4A /* ViewModel.swift */,
 				C89C543B2D5F1C250055FC4A /* PlanetSelectionView.swift */,
 				C89C543D2D5F1C450055FC4A /* ResultView.swift */,
+				C86BAD842D62439D00624590 /* testView.swift */,
 			);
 			path = "Finding Falcon SwiftUI";
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				C89C543C2D5F1C250055FC4A /* PlanetSelectionView.swift in Sources */,
 				C89C54362D5F1B4D0055FC4A /* Models.swift in Sources */,
 				C89C542A2D5F1A880055FC4A /* ContentView.swift in Sources */,
+				C86BAD852D62439D00624590 /* testView.swift in Sources */,
 				C89C54382D5F1B760055FC4A /* APIService.swift in Sources */,
 				C89C543E2D5F1C450055FC4A /* ResultView.swift in Sources */,
 				C89C54282D5F1A880055FC4A /* Finding_Falcon_SwiftUIApp.swift in Sources */,
